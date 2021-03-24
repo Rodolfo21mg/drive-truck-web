@@ -1,0 +1,120 @@
+﻿
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-12 grid-margin">
+
+                <div class="card card-statistics">
+                    <div class="row">
+                        <div class="card-col col-xl-3 col-lg-3 col-md-3 col-6">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-center flex-column flex-sm-row">
+                                    <i class="mdi mdi-clipboard-account text-primary mr-0 mr-sm-4 icon-lg"></i>
+                                    <div class="wrapper text-center text-sm-left">
+                                        <p class="card-text mb-0">Clientes</p>
+                                        <div class="fluid-container">
+                                            <h3 class="card-title mb-0">2</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-col col-xl-3 col-lg-3 col-md-3 col-6">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-center flex-column flex-sm-row">
+                                    <i class="mdi mdi-home text-primary mr-0 mr-sm-4 icon-lg"></i>
+                                    <div class="wrapper text-center text-sm-left">
+                                        <p class="card-text mb-0">Garagens</p>
+                                        <div class="fluid-container">
+                                            <h3 class="card-title mb-0">2</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-col col-xl-3 col-lg-3 col-md-3 col-6">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-center flex-column flex-sm-row">
+                                    <i class="mdi mdi-account-multiple text-primary mr-0 mr-sm-4 icon-lg"></i>
+                                    <div class="wrapper text-center text-sm-left">
+                                        <p class="card-text mb-0">Motoristas</p>
+                                        <div class="fluid-container">
+                                            <h3 class="card-title mb-0">2</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-col col-xl-3 col-lg-3 col-md-3 col-6">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center justify-content-center flex-column flex-sm-row">
+                                    <i class="mdi mdi-truck text-primary mr-0 mr-sm-4 icon-lg"></i>
+                                    <div class="wrapper text-center text-sm-left">
+                                        <p class="card-text mb-0">Veículos</p>
+                                        <div class="fluid-container">
+                                            <h3 class="card-title mb-0">2</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="col-md-8 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">The Current Chart</h5>
+                        <canvas id="current-chart" height="100"></canvas>
+                    </div>
+                    <div class="border-top py-4 px-4">
+                        <p class="mb-0 text-gray">Projects Status</p>
+                        <div class="d-flex align-items-end">
+                            <h2 class="mb-0 display-2 font-weight-semibold">76,533</h2>
+                            <p class="mb-2 ml-1">PCS</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="w-75 mx-auto">
+                            <div class="d-flex justify-content-between text-center mb-2">
+                                <div class="wrapper">
+                                    <h4>6,256</h4>
+                                    <small class="text-muted">Total sales</small>
+                                </div>
+                                <div class="wrapper">
+                                    <h4>8569</h4>
+                                    <small class="text-muted">Open Campaign</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="morris-line-example" style="height:250px;"></div>
+                        <div class="w-75 mx-auto">
+                            <div class="d-flex justify-content-between text-center mt-5">
+                                <div class="wrapper">
+                                    <h4>5136</h4>
+                                    <small class="text-muted">Online Sales</small>
+                                </div>
+                                <div class="wrapper">
+                                    <h4>4596</h4>
+                                    <small class="text-muted">Store Sales</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+

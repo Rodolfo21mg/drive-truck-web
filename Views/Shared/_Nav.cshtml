@@ -1,0 +1,196 @@
+<nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row navbar-danger">
+    <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
+        <a class="navbar-brand brand-logo" href="/home"><img src="../../images/logo-navbar.png"/></a>
+    </div>
+    <div class="navbar-menu-wrapper d-flex align-items-center">
+        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+            <span class="icon-menu"></span>
+        </button>
+        <ul class="navbar-nav navbar-nav-right">
+        
+            <li class="nav-item dropdown">
+                <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#"
+                    data-toggle="dropdown">
+                    <i class="icon-bell mx-0"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
+                    aria-labelledby="notificationDropdown">
+                    <a class="dropdown-item">
+                        <p class="mb-0 font-weight-normal float-left">You have 4 new notifications
+                        </p>
+                        <span class="badge badge-pill badge-warning float-right">View all</span>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item preview-item">
+                        <div class="preview-thumbnail">
+                            <div class="preview-icon bg-success">
+                                <i class=" icon-ban mx-0"></i>
+                            </div>
+                        </div>
+                        <div class="preview-item-content">
+                            <h6 class="preview-subject font-weight-medium">Application Error</h6>
+                            <p class="font-weight-light small-text">
+                                Just now
+                            </p>
+                        </div>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item preview-item">
+                        <div class="preview-thumbnail">
+                            <div class="preview-icon bg-warning">
+                                <i class="icon-cursor-move mx-0"></i>
+                            </div>
+                        </div>
+                        <div class="preview-item-content">
+                            <h6 class="preview-subject font-weight-medium">Settings</h6>
+                            <p class="font-weight-light small-text">
+                                Private message
+                            </p>
+                        </div>
+                    </a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item preview-item">
+                        <div class="preview-thumbnail">
+                            <div class="preview-icon bg-info">
+                                <i class="icon-envelope mx-0"></i>
+                            </div>
+                        </div>
+                        <div class="preview-item-content">
+                            <h6 class="preview-subject font-weight-medium">New user registration</h6>
+                            <p class="font-weight-light small-text">
+                                2 days ago
+                            </p>
+                        </div>
+                    </a>
+                </div>
+            </li>
+
+            
+            <li class="nav-item dropdown">
+                <a class="nav-link count-indicator dropdown-toggle" id="notificationDropdown" href="#"
+                    data-toggle="dropdown">
+                    <i class="icon-power mx-0"></i>
+                </a>
+
+                <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list"
+                    aria-labelledby="notificationDropdown">
+                    <a href="/profile" class="dropdown-item"><i class="fa fa-user-circle-o" aria-hidden="true"></i> Meu Perfil</a>
+                    <a href="{{ route('logout') }}"
+                            onclick="event.preventDefault();document.getElementById('logout-form').submit();"
+                            class="dropdown-item"><i class="fa fa-sign-out" aria-hidden="true"></i> Sair</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                        {{ csrf_field() }}
+                    </form>
+                </div>
+            </li>
+
+        </ul>
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" type="button"
+            data-toggle="offcanvas">
+            <span class="icon-menu"></span>
+        </button>
+    </div>
+</nav>
+<!-- partial -->
+<div class="container-fluid page-body-wrapper">
+    <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+            <li class="nav-item nav-profile">
+                <div class="nav-link">
+                 <!--    <div class="profile-image">
+                        <img src="https://via.placeholder.com/36x36" alt="image" />
+                        <span class="online-status online"></span>
+                    </div> -->
+                    <div class="profile-name">
+                        <p class="name">
+                            {{ Auth::user()->name    }}
+                        </p>
+                        <p class="designation">
+                            {{ Auth::user()->Client->fantasy_name }}
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/home">
+                    <i class="fa fa-home menu-icon"></i>
+                    <span class="menu-title">Dashboard</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#ui-register" aria-expanded="false" aria-controls="ui-register">
+                    <i class="fa fa-drivers-license-o menu-icon"></i>
+                    <span class="menu-title">Cadastros</span>
+                </a>
+                <div class="collapse" id="ui-register">
+                    <ul class="nav flex-column sub-menu">
+                        <li class="nav-item"> <a class="nav-link" href="/customer">Clientes</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="/garage">Garagens</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="/driver">Motoristas</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="/vehicles">Veículos</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#ui-send" aria-expanded="false" aria-controls="ui-send">
+                    <i class="fa fa-paper-plane menu-icon"></i>
+                    <span class="menu-title">Gestão de Entregas</span>
+                </a>
+                <div class="collapse" id="ui-send">
+                    <ul class="nav flex-column sub-menu">
+                        <li class="nav-item"> <a class="nav-link" href="pages/ui-features/accordions.html">Clientes</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Motoristas</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="pages/ui-features/badges.html">Garagems</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="pages/ui-features/breadcrumbs.html">Veículos</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#ui-expense" aria-expanded="false" aria-controls="ui-expense">
+                    <i class="fa fa-money menu-icon"></i>
+                    <span class="menu-title">Gestão de Despesas</span>
+                </a>
+                <div class="collapse" id="ui-expense">
+                    <ul class="nav flex-column sub-menu">
+                        <li class="nav-item"> <a class="nav-link" href="pages/ui-features/accordions.html">Clientes</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Motoristas</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="pages/ui-features/badges.html">Garagems</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="pages/ui-features/breadcrumbs.html">Veículos</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#ui-time" aria-expanded="false" aria-controls="ui-time">
+                    <i class="fa fa-clock-o menu-icon"></i>
+                    <span class="menu-title">Controle de Ponto</span>
+                </a>
+                <div class="collapse" id="ui-time">
+                    <ul class="nav flex-column sub-menu">
+                        <li class="nav-item"> <a class="nav-link" href="pages/ui-features/accordions.html">Clientes</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Motoristas</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="pages/ui-features/badges.html">Garagems</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="pages/ui-features/breadcrumbs.html">Veículos</a></li>
+                    </ul>
+                </div>
+            </li>  
+            <li class="nav-item">
+                <a class="nav-link" data-toggle="collapse" href="#ui-report" aria-expanded="false" aria-controls="ui-report">
+                    <i class="fa fa-file-archive-o menu-icon"></i>
+                    <span class="menu-title">Relatórios</span>
+                </a>
+                <div class="collapse" id="ui-report">
+                    <ul class="nav flex-column sub-menu">
+                        <li class="nav-item"> <a class="nav-link" href="pages/ui-features/accordions.html">Clientes</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Motoristas</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="pages/ui-features/badges.html">Garagems</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="pages/ui-features/breadcrumbs.html">Veículos</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/home">
+                    <i class="fa fa-gear menu-icon"></i>
+                    <span class="menu-title">Configurações</span>
+                </a>
+            </li>
+    </nav>
