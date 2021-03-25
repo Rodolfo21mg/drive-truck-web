@@ -14392,8 +14392,13 @@
   "RootNamespace": "drive_truck_web",
   "Documents": [
     {
-      "FilePath": "c:\\Users\\Rodolfo Oliveira\\Documents\\drive-truck-web\\Views\\Shared\\_nav.cshtml",
-      "TargetPath": "Views\\Shared\\_nav.cshtml",
+      "FilePath": "c:\\Users\\Rodolfo Oliveira\\Documents\\drive-truck-web\\Views\\Shared\\_Nav.cshtml",
+      "TargetPath": "Views\\Shared\\_Nav.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Rodolfo Oliveira\\Documents\\drive-truck-web\\Areas\\Identity\\Pages\\Account\\_ViewImports.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\_ViewImports.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14402,8 +14407,18 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Rodolfo Oliveira\\Documents\\drive-truck-web\\Views\\Shared\\_js.cshtml",
-      "TargetPath": "Views\\Shared\\_js.cshtml",
+      "FilePath": "c:\\Users\\Rodolfo Oliveira\\Documents\\drive-truck-web\\Areas\\Identity\\Pages\\_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Rodolfo Oliveira\\Documents\\drive-truck-web\\Views\\Shared\\_Js.cshtml",
+      "TargetPath": "Views\\Shared\\_Js.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Rodolfo Oliveira\\Documents\\drive-truck-web\\Areas\\Identity\\Pages\\_ViewImports.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\_ViewImports.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14417,13 +14432,33 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Rodolfo Oliveira\\Documents\\drive-truck-web\\Views\\Login\\Index.cshtml",
-      "TargetPath": "Views\\Login\\Index.cshtml",
+      "FilePath": "c:\\Users\\Rodolfo Oliveira\\Documents\\drive-truck-web\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\Login.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Rodolfo Oliveira\\Documents\\drive-truck-web\\Views\\Shared\\_Footer.cshtml",
+      "TargetPath": "Views\\Shared\\_Footer.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Rodolfo Oliveira\\Documents\\drive-truck-web\\Areas\\Identity\\Pages\\Account\\ForgotPassword.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\ForgotPassword.cshtml",
       "FileKind": "mvc"
     },
     {
       "FilePath": "c:\\Users\\Rodolfo Oliveira\\Documents\\drive-truck-web\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Rodolfo Oliveira\\Documents\\drive-truck-web\\Areas\\Identity\\Pages\\Account\\Logout.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\Logout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\Rodolfo Oliveira\\Documents\\drive-truck-web\\Views\\Shared\\_LoginPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_LoginPartial.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14437,8 +14472,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Rodolfo Oliveira\\Documents\\drive-truck-web\\Views\\Shared\\_css.cshtml",
-      "TargetPath": "Views\\Shared\\_css.cshtml",
+      "FilePath": "c:\\Users\\Rodolfo Oliveira\\Documents\\drive-truck-web\\Views\\Shared\\_Css.cshtml",
+      "TargetPath": "Views\\Shared\\_Css.cshtml",
       "FileKind": "mvc"
     }
   ],
