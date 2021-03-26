@@ -14457,11 +14457,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\Rodolfo Oliveira\\Documents\\drive-truck-web\\Views\\Shared\\_LoginPartial.cshtml",
-      "TargetPath": "Views\\Shared\\_LoginPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\Rodolfo Oliveira\\Documents\\drive-truck-web\\Areas\\Identity\\Pages\\_ViewStart.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\_ViewStart.cshtml",
       "FileKind": "mvc"
