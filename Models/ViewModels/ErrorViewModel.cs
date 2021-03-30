@@ -1,6 +1,6 @@
 using System;
 
-namespace drive_truck_web.Models
+namespace drive_truck_web.Models.ViewModels
 {
     public class ErrorViewModel
     {

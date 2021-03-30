@@ -1,4 +1,4 @@
-﻿using drive_truck_web.Models;
+﻿using drive_truck_web.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;

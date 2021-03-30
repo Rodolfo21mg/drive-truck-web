@@ -1,5 +1,5 @@
 ﻿using System;
-using drive_truck_web.Data;
+using drive_truck_web.Models;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI;
