@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using drive_truck_web.Models;
+using DriveTruck.Models;
 
-namespace drive_truck_web.Migrations
+namespace DriveTruck.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     [Migration("20210330010505_Initial")]

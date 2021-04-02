@@ -1,4 +1,3 @@
-using drive_truck_web.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -12,8 +11,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;using Microsoft.AspNetCore.Mvc.Authorization;
+using DriveTruck.Models;
+using DriveTruck.Services;
 
-namespace drive_truck_web
+namespace DriveTruck
 {
     public class Startup
     {
@@ -32,14 +33,18 @@ namespace drive_truck_web
                      Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
-            services.AddControllersWithViews();
+            services.AddControllersWithViews().AddRazorRuntimeCompilation();
             services.AddRazorPages();
+
+            services.AddControllersWithViews().AddRazorRuntimeCompilation(); 
 
             services.AddMvc(options =>
             {
                 // This pushes users to login if not authenticated
                 options.Filters.Add(new AuthorizeFilter());
             });
+
+            services.AddScoped<CustomerServices>();
 
         }
 

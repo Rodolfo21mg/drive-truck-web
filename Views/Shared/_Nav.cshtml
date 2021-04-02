@@ -1,5 +1,4 @@
 @using Microsoft.AspNetCore.Identity
-
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
 
@@ -132,10 +131,10 @@
                 </a>
                 <div class="collapse" id="ui-register">
                     <ul class="nav flex-column sub-menu">
-                        <li class="nav-item"> <a class="nav-link" href="/customer">Clientes</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="/garage">Garagens</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="/driver">Motoristas</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="/vehicles">Veículos</a></li>
+                        <li class="nav-item"> <a class="nav-link" asp-controller="Customers" asp-action="Index">Clientes</a></li>
+                        <li class="nav-item"> <a class="nav-link" asp-controller="Garage" asp-action="Index">Garagens</a></li>
+                        <li class="nav-item"> <a class="nav-link" asp-controller="Driver" asp-action="Index">Motoristas</a></li>
+                        <li class="nav-item"> <a class="nav-link" asp-controller="Vehicles" asp-action="Index">Veículos</a></li>
                     </ul>
                 </div>
             </li>

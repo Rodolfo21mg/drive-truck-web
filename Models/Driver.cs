@@ -1,8 +1,8 @@
 using System;
-using drive_truck_web.Models;
+using DriveTruck.Models;
 using System.ComponentModel.DataAnnotations;
 
-namespace drive_truck_web.Models
+namespace DriveTruck.Models
 {
     public class Driver
     {

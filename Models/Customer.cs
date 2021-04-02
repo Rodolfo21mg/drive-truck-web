@@ -1,7 +1,7 @@
 using System;
-using drive_truck_web.Models;
+using DriveTruck.Models;
 
-namespace drive_truck_web.Models
+namespace DriveTruck.Models
 {
     public class Customer
     {

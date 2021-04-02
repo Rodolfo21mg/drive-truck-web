@@ -1,6 +1,6 @@
 using System;
 
-namespace drive_truck_web.Models
+namespace DriveTruck.Models
 {
     public class Garage
     {

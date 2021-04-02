@@ -1,4 +1,4 @@
-﻿using drive_truck_web.Models.ViewModels;
+﻿using DriveTruck.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -7,7 +7,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace drive_truck_web.Controllers
+namespace DriveTruck.Controllers
 {
     public class HomeController : Controller
     {

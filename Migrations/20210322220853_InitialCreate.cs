@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace drive_truck_web.Migrations
+namespace DriveTruck.Migrations
 {
     public partial class InitialCreate : Migration
     {

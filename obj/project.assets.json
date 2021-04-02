@@ -9067,11 +9067,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Rodolfo Oliveira\\Documents\\drive-truck-web\\drive-truck-web.csproj",
-      "projectName": "drive-truck-web",
-      "projectPath": "C:\\Users\\Rodolfo Oliveira\\Documents\\drive-truck-web\\drive-truck-web.csproj",
+      "projectUniqueName": "C:\\Users\\Rodolfo Oliveira\\Documents\\DriveTruck\\DriveTruck.csproj",
+      "projectName": "DriveTruck",
+      "projectPath": "C:\\Users\\Rodolfo Oliveira\\Documents\\DriveTruck\\DriveTruck.csproj",
       "packagesPath": "C:\\Users\\Rodolfo Oliveira\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Rodolfo Oliveira\\Documents\\drive-truck-web\\obj\\",
+      "outputPath": "C:\\Users\\Rodolfo Oliveira\\Documents\\DriveTruck\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Rodolfo Oliveira\\AppData\\Roaming\\NuGet\\NuGet.Config",

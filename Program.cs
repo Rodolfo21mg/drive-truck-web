@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace drive_truck_web
+namespace DriveTruck
 {
     public class Program
     {

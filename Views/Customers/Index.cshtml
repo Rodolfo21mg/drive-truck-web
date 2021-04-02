@@ -1,0 +1,87 @@
+
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Css {
+    <partial name="~/Views/Shared/_Css.cshtml"/>
+}
+
+@section Nav {
+    <partial name="~/Views/Shared/_Nav.cshtml" />
+}
+
+
+
+<div class="main-panel">
+    <div class="content-wrapper">
+        <div class="row">
+            <div class="col-12 grid-margin">
+      
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row pull-right">
+                            <button type="button" class="btn btn-danger btn-rounded openModal"><i class="fa fa-upload"></i> Importar Clientes</button>
+                            <a asp-controller="Customers" asp-action="Create"><button type="button" class="btn btn-success btn-rounded btn-fw"><i class="fa fa-list-alt"></i> Cadastrar Cliente</button></a>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="table-responsive">
+                                <table id="table" class="table dataTable no-footer" role="grid" aria-describedby="order-listing_info">
+                                        <thead>
+                                            <tr>
+                                                <th>Código</th>
+                                                <th>Razão Social</th>
+                                                <th>CNPJ</th>
+                                                <th>Ações</th>
+                                            </tr>
+                                        </thead>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div class="modal" id="exampleModal" tabindex="-1" role="dialog" data-backdrop="static" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ModalLabel">Importar Clientes</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+               
+           
+                    <div class="form-group">
+                        <a href="{{route('customer.export')}}" class="btn btn-success export">Exemplo Excel</a>
+                    </div>
+                    <div class="form-group">
+                        <label for="message-text" class="col-form-label">Planilha:</label>
+                        <input type="file" name="file" class="form-control"></input>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-success">Importar</button>
+                    <button type="button" class="btn btn-light" data-dismiss="modal">Fechar</button>
+                </div>
+              
+            </div>
+        </div>
+    </div>
+
+
+
+@section Footer {
+    <partial name="~/Views/Shared/_Footer.cshtml" />
+}
+
