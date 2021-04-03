@@ -30,6 +30,15 @@ namespace DriveTruck.Controllers
             return View();
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(Customer customer)
+        {
+     
+            await _customerServices.InsertAsync(customer);
+            return RedirectToAction(nameof(Index));
+        }
+
 
     }
 }

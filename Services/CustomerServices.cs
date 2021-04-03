@@ -16,5 +16,11 @@ namespace DriveTruck.Services
             _context = context;
         }
 
+        public async Task InsertAsync(Customer obj)
+        {
+            _context.Add(obj);
+            await _context.SaveChangesAsync();
+        }
+
     }
 }
