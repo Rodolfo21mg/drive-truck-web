@@ -1,4 +1,4 @@
-﻿@model DriveTruck.Models.ViewModels.CustomerFormViewModel
+﻿
 
 @{
     ViewData["Title"] = "Create Customers";
@@ -13,12 +13,10 @@
     <partial asp-for="~/Views/Shared/_Nav.cshtml" />
 }
 
-
 <div class="main-panel">
     <div class="content-wrapper">
         <div class="row">
             <div class="col-12 grid-margin">
-           
                 <div class="card">
                     <div class="card-header">
                     </div>
@@ -27,105 +25,11 @@
                             <p class="card-description">Cadastro de Cliente</p>
                             <form asp-action="Create">
                                 <div class="form-group">
-                                    <label asp-for="employer_number">CNPJ</label>
-                                    <input type="text" class="form-control" id="employer_number" asp-for="employer_number" placeholder="CNPJ" required>
-                                    <input type="hidden" asp-for="client_id" value="1">
+                                    <label >CNPJ</label>
+                                    <input type="text" class="form-control" placeholder="CNPJ" required>
+                                    <input type="hidden"  value="1">
                                 </div>
-                                <div class="form-group">
-                                    <label asp-for="registered_name">Razão Social</label>
-                                    <input type="text" class="form-control" id="registered_name" asp-for="registered_name" placeholder="Razão Social" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputEmail3">Nome Fantasia</label>
-                                    <input type="text" class="form-control" id="fantasy_name" asp-for="fantasy_name" placeholder="Nome Fantasia" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="exampleInputPassword4">Endereço</label>
-                                    <input type="text" class="form-control" id="address" asp-for="address" placeholder="Endereço" required>
-                                </div>
-                                <div class="row">
-                                    <div class="form-group col-md-3">
-                                        <label for="exampleInputPassword4">Bairro</label>
-                                        <input type="text" class="form-control" id="neighborhood" asp-for="neighborhood" placeholder="Bairro" required>
-                                    </div>
-                                    <div class="form-group col-md-3">
-                                        <label for="exampleInputPassword4">Cidade</label>
-                                        <input type="text" class="form-control" id="city" asp-for="city" placeholder="Cidade" required>
-                                    </div>
-                                    <div class="form-group col-md-2">
-                                        <label for="exampleInputPassword4">UF</label>
-                                        <select class="form-control" asp-for="state" id="state" required>
-                                            <option value="" selected>Escolha um Estado</option>
-                                            <option value="AC">Acre</option>
-                                            <option value="AL">Alagoas</option>
-                                            <option value="AP">Amapá</option>
-                                            <option value="AM">Amazonas</option>
-                                            <option value="BA">Bahia</option>
-                                            <option value="CE">Ceará</option>
-                                            <option value="DF">Distrito Federal</option>
-                                            <option value="ES">Espírito Santo</option>
-                                            <option value="GO">Goiás</option>
-                                            <option value="MA">Maranhão</option>
-                                            <option value="MT">Mato Grosso</option>
-                                            <option value="MS">Mato Grosso do Sul</option>
-                                            <option value="MG">Minas Gerais</option>
-                                            <option value="PA">Pará</option>
-                                            <option value="PB">Paraíba</option>
-                                            <option value="PR">Paraná</option>
-                                            <option value="PE">Pernambuco</option>
-                                            <option value="PI">Piauí</option>
-                                            <option value="RJ">Rio de Janeiro</option>
-                                            <option value="RN">Rio Grande do Norte</option>
-                                            <option value="RS">Rio Grande do Sul</option>
-                                            <option value="RO">Rondônia</option>
-                                            <option value="RR">Roraima</option>
-                                            <option value="SC">Santa Catarina</option>
-                                            <option value="SP">São Paulo</option>
-                                            <option value="SE">Sergipe</option>
-                                            <option value="TO">Tocantins</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group col-md-2">
-                                        <label for="exampleInputPassword4">CEP</label>
-                                        <input type="text" class="form-control" id="zip_code" asp-for="zip_code" placeholder="CEP" required>
-                                    </div>
-                                    <div class="form-group col-md-2">
-                                        <label for="exampleInputPassword4">País</label>
-                                        <select class="form-control" asp-for="country" id="country" required>
-                                            <option selected value="Brasil">Brasil</option>
-                                        </select>
-                                    </div>
-                                </div>   
-                                <div class="row">
-                                    <div class="form-group col-md-3">
-                                        <label for="exampleInputPassword4">Telefone Comercial 1</label>
-                                        <input type="text" class="form-control" id="landline_phone" asp-for="landline_phone" placeholder="Telefone Comercial 1" required>
-                                    </div>
-                                    <div class="form-group col-md-3">
-                                        <label for="exampleInputPassword4">Telefone Comercial 2</label>
-                                        <input type="text" class="form-control" id="mobile_phone" asp-for="mobile_phone" placeholder="Telefone Comercial 2">
-                                    </div>
-                                    <div class="form-group col-md-6">
-                                        <label for="exampleInputPassword4">Email</label>
-                                        <input type="email" class="form-control" id="email" asp-for="email" placeholder="Email" required>
-                                    </div>
-                                </div> 
-                                <div class="row">
-                                    <div class="form-group col-md-12">
-                                        <label for="exampleInputPassword4">Responsável</label>
-                                        <input type="text" class="form-control" id="manager" asp-for="manager" placeholder="Responsável" required>
-                                    </div>
-                                </div>   
-                                <div class="row">
-                                    <div class="form-group col-md-4">
-                                        <label for="exampleInputPassword4">Contato Responsável</label>
-                                        <input type="text" class="form-control" id="contact_manager" asp-for="contact_manager" placeholder="Contato Responsável" required>
-                                    </div>
-                                    <div class="form-group col-md-8">
-                                        <label for="exampleInputPassword4">Email Responsável</label>
-                                        <input type="email" class="form-control" id="email_manager" asp-for="email_manager" placeholder="Email" required>
-                                    </div>
-                                </div>   
+                           
                                 <button type="submit" class="btn btn-success mr-2">Salvar</button>
                                 <button class="btn btn-light">Cancelar</button>
                             </form>

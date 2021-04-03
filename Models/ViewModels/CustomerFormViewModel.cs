@@ -4,7 +4,7 @@ namespace DriveTruck.Models.ViewModels
 {
     public class CustomerFormViewModel
     {
-        public Customner Customer { get; set; }
+        public Customer Customer { get; set; }
     }
 }
 

@@ -7,21 +7,21 @@ namespace DriveTruck.Models
     public class Driver
     {
         public int Id { get; set; }
-        public string name { get; set; }
-        public string number_cpf { get; set; }
-        public string number_rg { get; set; }
-        public string number_pis { get; set; }
-        public string number_driver_license { get; set; }
-        public DateTime date_expire_driver_license { get; set; }
-        public string address { get; set; }
-        public int number { get; set; }
-        public string city { get; set; }
-        public string state { get; set; }
-        public string zip_code { get; set; }
-        public string country { get; set; }
-        public string phone { get; set; }
-        public string phone_emergency { get; set; }
-        public string email { get; set; }
+        public string Name { get; set; }
+        public string NumberCpf { get; set; }
+        public string NumberRg { get; set; }
+        public string NumberPis { get; set; }
+        public string NumberDriverLicense { get; set; }
+        public DateTime DateExpireDriverLicense { get; set; }
+        public string Address { get; set; }
+        public int Number { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public string ZipCode { get; set; }
+        public string Country { get; set; }
+        public string Phone { get; set; }
+        public string PhoneEmergency { get; set; }
+        public string Email { get; set; }
         public Garage Garage {get ; set; }
         public Client Client {get ; set; }
 
