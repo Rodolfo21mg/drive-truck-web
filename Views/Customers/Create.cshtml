@@ -1,17 +1,18 @@
-﻿
+﻿@model DriveTruck.Models.ViewModels.CustomerFormViewModel;
 
 @{
-    ViewData["Title"] = "Create Customers";
+    ViewData["Title"] = "Home Page";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 @section Css {
-    <partial asp-for="~/Views/Shared/_Css.cshtml"/>
+    <partial name="~/Views/Shared/_Css.cshtml"/>
 }
 
 @section Nav {
-    <partial asp-for="~/Views/Shared/_Nav.cshtml" />
+    <partial name="~/Views/Shared/_Nav.cshtml" />
 }
+
 
 <div class="main-panel">
     <div class="content-wrapper">
@@ -25,11 +26,105 @@
                             <p class="card-description">Cadastro de Cliente</p>
                             <form asp-action="Create">
                                 <div class="form-group">
-                                    <label >CNPJ</label>
-                                    <input type="text" class="form-control" placeholder="CNPJ" required>
-                                    <input type="hidden"  value="1">
+                                    <label>CNPJ</label>
+                                    <input type="text" class="form-control" id="employer_number" asp-for="Customer.EmployerNumber" placeholder="CNPJ" required>
+                                    <input type="hidden" asp-for="Customer.Client" value="1">
                                 </div>
-                           
+                                <div class="form-group">
+                                    <label>Razão Social</label>
+                                    <input type="text" class="form-control" id="registered_name" asp-for="Customer.RegisteredName" placeholder="Razão Social" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Nome Fantasia</label>
+                                    <input type="text" class="form-control" id="fantasy_name" asp-for="Customer.FantasyName" placeholder="Nome Fantasia" required>
+                                </div>
+                                <div class="form-group">
+                                    <label>Endereço</label>
+                                    <input type="text" class="form-control" id="address" asp-for="Customer.Address" placeholder="Endereço" required>
+                                </div>
+                                <div class="row">
+                                    <div class="form-group col-md-3">
+                                        <label>Bairro</label>
+                                        <input type="text" class="form-control" id="neighborhood" asp-for="Customer.Neighborhood" placeholder="Bairro" required>
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                        <label>Cidade</label>
+                                        <input type="text" class="form-control" id="city" asp-for="Customer.City" placeholder="Cidade" required>
+                                    </div>
+                                    <div class="form-group col-md-2">
+                                        <label>UF</label>
+                                        <select class="form-control" asp-for="Customer.State" id="state" required>
+                                            <option value="" selected>Escolha um Estado</option>
+                                            <option value="AC">Acre</option>
+                                            <option value="AL">Alagoas</option>
+                                            <option value="AP">Amapá</option>
+                                            <option value="AM">Amazonas</option>
+                                            <option value="BA">Bahia</option>
+                                            <option value="CE">Ceará</option>
+                                            <option value="DF">Distrito Federal</option>
+                                            <option value="ES">Espírito Santo</option>
+                                            <option value="GO">Goiás</option>
+                                            <option value="MA">Maranhão</option>
+                                            <option value="MT">Mato Grosso</option>
+                                            <option value="MS">Mato Grosso do Sul</option>
+                                            <option value="MG">Minas Gerais</option>
+                                            <option value="PA">Pará</option>
+                                            <option value="PB">Paraíba</option>
+                                            <option value="PR">Paraná</option>
+                                            <option value="PE">Pernambuco</option>
+                                            <option value="PI">Piauí</option>
+                                            <option value="RJ">Rio de Janeiro</option>
+                                            <option value="RN">Rio Grande do Norte</option>
+                                            <option value="RS">Rio Grande do Sul</option>
+                                            <option value="RO">Rondônia</option>
+                                            <option value="RR">Roraima</option>
+                                            <option value="SC">Santa Catarina</option>
+                                            <option value="SP">São Paulo</option>
+                                            <option value="SE">Sergipe</option>
+                                            <option value="TO">Tocantins</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-md-2">
+                                        <label>CEP</label>
+                                        <input type="text" class="form-control" placeholder="CEP"> 
+                                    </div>
+                                    <div class="form-group col-md-2">
+                                        <label>País</label>
+                                        <select class="form-control" asp-for="Customer.Country" id="country" required>
+                                            <option selected value="Brasil">Brasil</option>
+                                        </select>
+                                    </div>
+                                </div>   
+                                <div class="row">
+                                    <div class="form-group col-md-3">
+                                        <label>Telefone Comercial 1</label>
+                                        <input type="text" class="form-control" id="landline_phone" asp-for="Customer.LandlinePhone" placeholder="Telefone Comercial 1" required>
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                        <label>Telefone Comercial 2</label>
+                                        <input type="text" class="form-control" id="mobile_phone" asp-for="Customer.MobilePhone" placeholder="Telefone Comercial 2">
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label>Email</label>
+                                        <input type="email" class="form-control" id="email" asp-for="Customer.Email" placeholder="Email" required>
+                                    </div>
+                                </div> 
+                                <div class="row">
+                                    <div class="form-group col-md-12">
+                                        <label>Responsável</label>
+                                        <input type="text" class="form-control" id="manager" asp-for="Customer.Manager" placeholder="Responsável" required>
+                                    </div>
+                                </div>   
+                                <div class="row">
+                                    <div class="form-group col-md-4">
+                                        <label>Contato Responsável</label>
+                                        <input type="text" class="form-control" id="contact_manager" asp-for="Customer.ContactManager" placeholder="Contato Responsável" required>
+                                    </div>
+                                    <div class="form-group col-md-8">
+                                        <label>Email Responsável</label>
+                                        <input type="email" class="form-control" id="email_manager" asp-for="Customer.EmailManager" placeholder="Email" required>
+                                    </div>
+                                </div>   
                                 <button type="submit" class="btn btn-success mr-2">Salvar</button>
                                 <button class="btn btn-light">Cancelar</button>
                             </form>
@@ -41,5 +136,5 @@
     </div>
 
 @section Footer {
-    <partial asp-for="~/Views/Shared/_Footer.cshtml" />
+    <partial name="~/Views/Shared/_Footer.cshtml" />
 }

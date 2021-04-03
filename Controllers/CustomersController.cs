@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DriveTruck.Services;
 using DriveTruck.Models.ViewModels;
+using DriveTruck.Models;
 
 namespace DriveTruck.Controllers
 {
@@ -30,6 +31,14 @@ namespace DriveTruck.Controllers
             return View();
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create(Customer customer)
+        {
+     
+            await _customerServices.InsertAsync(customer);
+            return RedirectToAction(nameof(Index));
+        }
 
 
     }
