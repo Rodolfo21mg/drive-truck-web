@@ -79,7 +79,124 @@
         </div>
     </div>
 
+@section Scripts{
+    <script type="text/javascript">
+    $(document).ready( function () {
 
+        $('.openModal').on('click',function(e){
+        e.preventDefault();
+            $('#exampleModal').modal('show');
+        });
+
+        var table = $('#table').DataTable({
+                processing: true,
+                stateSave: true,
+                serverSide: false,
+                responsive: true,
+                deferLoading: 0,
+                autoWidth: true,
+                scrollY: false,
+                lengthChange: true,
+                paging: true,
+                dom: '<"float-left"B<"toolbar">><"float-right"f>t<"bottom"<"float-left"lri><"float-right"p>>',
+                buttons: [
+                    {
+                        extend:    'excelHtml5',
+                        text:      '<i class="fa fa-file-excel-o"></i> EXCEL',
+                        titleAttr: 'Excel'
+                    },
+                    {
+                        extend:    'pdfHtml5',
+                        text:      '<i class="fa fa-file-pdf-o"></i> PDF',
+                        titleAttr: 'PDF'
+                    }
+                ],
+                ajax: {
+                    type: "GET",
+                    dataType: "json",
+                    url : '@Url.Action("Get", "Customers")',
+                    dataSrc : 'result',
+                    data: function (d) { 
+                     /*    d.data_inicio =  $('#data_inicio').val();
+                        d.data_fim = $('#data_fim').val();
+                        d.origem = $('#origem').val(); */
+                    } 
+                },
+                oLanguage: {
+                    "sUrl": "lib/dataTable/pt-br.txt"
+            },
+            columns: [
+                { data: 'id' },
+                { data: 'registeredName' },
+                { data: 'employerNumber' },
+                { data: 'id',
+                    render: function ( data, type, row ) {
+                        return '<a href="customer/'+row.Id+'/show" title="Visualizar"><i class="fa fa-external-link fa-lg text-warning"></i></a>&nbsp'+
+                               '<a href="customer/'+row.Id+'/edit" title="Editar"><i class="fa fa-pencil-square fa-lg text-primary"></i></a>&nbsp'+
+                               '<a class="excluir" id="'+row.Id+'" title="Excluir"><i class="fa fa-trash fa-lg text-danger"></i></a>&nbsp';
+                    }
+                },
+            ]
+        });
+
+        $(document).on('click', '.excluir', function(e){
+            e.preventDefault();
+            var id = $(this).attr('id');
+            $.confirm({
+                title: 'Atenção!',
+                content: 'Deseja realmente excluir?',
+                type: 'orange',
+                typeAnimated: true,
+                buttons: {
+                    tryAgain: {
+                        text: 'Confirmar',
+                        btnClass: 'btn-orange',
+                        action: function(){
+                            $.ajax({
+                                type: "DELETE",
+                                dataType: "json",
+                                url: '/customer/'+id+'/delete',  
+                                headers: {
+                                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                                },
+                            })
+                            .done(function(data){
+                                
+                                table.ajax.reload();
+                                
+                                $.confirm({
+                                    title: 'Sucesso!',
+                                    content: 'Alteração realizada com sucesso!',
+                                    type: 'green',
+                                    typeAnimated: true,
+                                    buttons: {
+                                        Ok: function () {
+                                        }
+                                    }
+                                });
+                            }).fail(function(data){
+                                $.confirm({
+                                    title: 'Erro!',
+                                    content: 'Encontramos algum erro! Tente novamente!',
+                                    type: 'red',
+                                    typeAnimated: true,
+                                    buttons: {
+                                        Ok: function () {
+                                        }
+                                    }
+                                });
+                            });
+                        }
+                    },
+                    Cancelar: function () {
+                    }
+                }
+            });
+        });
+    });
+
+ </script>
+}
 
 @section Footer {
     <partial name="~/Views/Shared/_Footer.cshtml" />

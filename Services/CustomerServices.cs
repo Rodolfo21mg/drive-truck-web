@@ -22,5 +22,10 @@ namespace DriveTruck.Services
             await _context.SaveChangesAsync();
         }
 
+        public async Task<List<Customer>> AllCustomers() 
+        {
+            var customers = _context.Customer.ToList();
+            return customers;
+        }
     }
 }

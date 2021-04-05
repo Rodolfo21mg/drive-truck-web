@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Dynamic.Core;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -11,6 +12,7 @@ using DriveTruck.Models;
 
 namespace DriveTruck.Controllers
 {
+
     public class CustomersController : Controller
     {
         private readonly CustomerServices _customerServices;
@@ -40,6 +42,12 @@ namespace DriveTruck.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        public IActionResult Get()
+        {
+            var customer = _customerServices.AllCustomers();
+            return Json(customer);
+        }
 
+     
     }
 }
