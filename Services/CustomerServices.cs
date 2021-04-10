@@ -44,7 +44,7 @@ namespace DriveTruck.Services
 
         public async Task RemoveAsync(int id)
         {
-            var obj = await _context.Customer.FindAsync(id);
+            var obj = await _context.Customer.FirstOrDefaultAsync(obj => obj.Id == id);
             _context.Customer.Remove(obj);
             await _context.SaveChangesAsync();
         }

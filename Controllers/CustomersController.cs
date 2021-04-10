@@ -70,6 +70,7 @@ namespace DriveTruck.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Route("Customers/Edit/{id}")]
         public async Task<IActionResult> Edit(int id, Customer customer)
         {
             await _customerServices.UpdateAsync(customer);
@@ -82,10 +83,17 @@ namespace DriveTruck.Controllers
         public async Task<IActionResult> Delete(int id)
         {
             await _customerServices.RemoveAsync(id);
-            return RedirectToAction(nameof(Index));
-     
+            return Json(new { success = true, message = "ok", status = 200 });
         }
 
-     
+        public IActionResult Export()
+        {
+            Console.WriteLine("Acessou!");
+        }
+
+        public IActionResult Import()
+        {
+            Console.WriteLine("Acessou!");
+        }
     }
 }

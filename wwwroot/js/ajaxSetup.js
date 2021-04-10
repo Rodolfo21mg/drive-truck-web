@@ -1,5 +1,5 @@
 $.ajaxSetup({
     headers: {
-        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        'RequestVerificationToken': $("input[name='__RequestVerificationToken']" ).val() 
     }
 });
