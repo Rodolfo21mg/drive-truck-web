@@ -1,7 +1,7 @@
-﻿@model DriveTruck.Models.ViewModels.CustomerFormViewModel;
+@model DriveTruck.Models.ViewModels.CustomerFormViewModel;
 
 @{
-    ViewData["Title"] = "Create Customers";
+    ViewData["Title"] = "Edit Customers";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -23,37 +23,37 @@
                     </div>
                     <div class="col-md-12">
                         <div class="card-body">
-                            <p class="card-description">Cadastro de Cliente</p>
-                            <form asp-action="Create">
+                            <p class="card-description">Edição de Cliente</p>
+                            <form asp-action="Edit">
                                 <div class="form-group">
                                     <label>CNPJ</label>
-                                    <input type="text" class="form-control" id="employer_number" asp-for="Customer.EmployerNumber" placeholder="CNPJ" required>
-                                    <input type="hidden" asp-for="Customer.Client" value="1">
+                                    <input type="text" class="form-control" asp-for="Customer.EmployerNumber" placeholder="CNPJ" required>
+                                    <input type="hidden" asp-for="Customer.Id">
                                 </div>
                                 <div class="form-group">
                                     <label>Razão Social</label>
-                                    <input type="text" class="form-control" id="registered_name" asp-for="Customer.RegisteredName" placeholder="Razão Social" required>
+                                    <input type="text" class="form-control" asp-for="Customer.RegisteredName" placeholder="Razão Social" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Nome Fantasia</label>
-                                    <input type="text" class="form-control" id="fantasy_name" asp-for="Customer.FantasyName" placeholder="Nome Fantasia" required>
+                                    <input type="text" class="form-control" asp-for="Customer.FantasyName" placeholder="Nome Fantasia" required>
                                 </div>
                                 <div class="form-group">
                                     <label>Endereço</label>
-                                    <input type="text" class="form-control" id="address" asp-for="Customer.Address" placeholder="Endereço" required>
+                                    <input type="text" class="form-control" asp-for="Customer.Address" placeholder="Endereço" required>
                                 </div>
                                 <div class="row">
                                     <div class="form-group col-md-3">
                                         <label>Bairro</label>
-                                        <input type="text" class="form-control" id="neighborhood" asp-for="Customer.Neighborhood" placeholder="Bairro" required>
+                                        <input type="text" class="form-control" asp-for="Customer.Neighborhood" placeholder="Bairro" required>
                                     </div>
                                     <div class="form-group col-md-3">
                                         <label>Cidade</label>
-                                        <input type="text" class="form-control" id="city" asp-for="Customer.City" placeholder="Cidade" required>
+                                        <input type="text" class="form-control"  asp-for="Customer.City" placeholder="Cidade" required>
                                     </div>
                                     <div class="form-group col-md-2">
                                         <label>UF</label>
-                                        <select class="form-control" asp-for="Customer.State" id="state" required>
+                                        <select class="form-control" asp-for="Customer.State" required>
                                             <option value="" selected>Escolha um Estado</option>
                                             <option value="AC">Acre</option>
                                             <option value="AL">Alagoas</option>
@@ -90,7 +90,7 @@
                                     </div>
                                     <div class="form-group col-md-2">
                                         <label>País</label>
-                                        <select class="form-control" asp-for="Customer.Country" id="country" required>
+                                        <select class="form-control" asp-for="Customer.Country" required>
                                             <option selected value="Brasil">Brasil</option>
                                         </select>
                                     </div>
@@ -98,31 +98,31 @@
                                 <div class="row">
                                     <div class="form-group col-md-3">
                                         <label>Telefone Comercial 1</label>
-                                        <input type="text" class="form-control" id="landline_phone" asp-for="Customer.LandlinePhone" placeholder="Telefone Comercial 1" required>
+                                        <input type="text" class="form-control" asp-for="Customer.LandlinePhone" placeholder="Telefone Comercial 1" required>
                                     </div>
                                     <div class="form-group col-md-3">
                                         <label>Telefone Comercial 2</label>
-                                        <input type="text" class="form-control" id="mobile_phone" asp-for="Customer.MobilePhone" placeholder="Telefone Comercial 2">
+                                        <input type="text" class="form-control" asp-for="Customer.MobilePhone" placeholder="Telefone Comercial 2">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label>Email</label>
-                                        <input type="email" class="form-control" id="email" asp-for="Customer.Email" placeholder="Email" required>
+                                        <input type="email" class="form-control" asp-for="Customer.Email" placeholder="Email" required>
                                     </div>
                                 </div> 
                                 <div class="row">
                                     <div class="form-group col-md-12">
                                         <label>Responsável</label>
-                                        <input type="text" class="form-control" id="manager" asp-for="Customer.Manager" placeholder="Responsável" required>
+                                        <input type="text" class="form-control" asp-for="Customer.Manager" placeholder="Responsável" required>
                                     </div>
                                 </div>   
                                 <div class="row">
                                     <div class="form-group col-md-4">
                                         <label>Contato Responsável</label>
-                                        <input type="text" class="form-control" id="contact_manager" asp-for="Customer.ContactManager" placeholder="Contato Responsável" required>
+                                        <input type="text" class="form-control" asp-for="Customer.ContactManager" placeholder="Contato Responsável" required>
                                     </div>
                                     <div class="form-group col-md-8">
                                         <label>Email Responsável</label>
-                                        <input type="email" class="form-control" id="email_manager" asp-for="Customer.EmailManager" placeholder="Email" required>
+                                        <input type="email" class="form-control" asp-for="Customer.EmailManager" placeholder="Email" required>
                                     </div>
                                 </div>   
                                 <button type="submit" class="btn btn-success mr-2">Salvar</button>

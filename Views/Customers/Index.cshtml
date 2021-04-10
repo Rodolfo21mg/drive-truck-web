@@ -1,6 +1,6 @@
 
 @{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Customers";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -131,9 +131,9 @@
                 { data: 'employerNumber' },
                 { data: 'id',
                     render: function ( data, type, row ) {
-                        return '<a href="customer/'+row.Id+'/show" title="Visualizar"><i class="fa fa-external-link fa-lg text-warning"></i></a>&nbsp'+
-                               '<a href="customer/'+row.Id+'/edit" title="Editar"><i class="fa fa-pencil-square fa-lg text-primary"></i></a>&nbsp'+
-                               '<a class="excluir" id="'+row.Id+'" title="Excluir"><i class="fa fa-trash fa-lg text-danger"></i></a>&nbsp';
+                        return '<a href="Customers/Show/'+row.id+'" title="Visualizar"><i class="fa fa-external-link fa-lg text-warning"></i></a>&nbsp'+
+                               '<a href="Customers/Edit/'+row.id+'" title="Editar"><i class="fa fa-pencil-square fa-lg text-primary"></i></a>&nbsp'+
+                               '<a class="excluir" id="'+row.id+'" title="Excluir"><i class="fa fa-trash fa-lg text-danger"></i></a>&nbsp';
                     }
                 },
             ]
@@ -155,10 +155,7 @@
                             $.ajax({
                                 type: "DELETE",
                                 dataType: "json",
-                                url: '/customer/'+id+'/delete',  
-                                headers: {
-                                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                                },
+                                url: 'Customers/Delete/'+id+'',
                             })
                             .done(function(data){
                                 

@@ -37,15 +37,53 @@ namespace DriveTruck.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Customer customer)
         {
-     
             await _customerServices.InsertAsync(customer);
             return RedirectToAction(nameof(Index));
         }
+        
+        [Route("Customers/Edit/{id}")]
+        public async Task<IActionResult> Edit(int? id)
+        {
+            var obj = await _customerServices.FindByIdAsync(id.Value);
+     
+            CustomerFormViewModel viewModel = new CustomerFormViewModel { Customer = obj};
+           
+            return View(viewModel);
+        } 
+
+        [Route("Customers/Show/{id}")]
+        public async Task<IActionResult> Show(int? id)
+        {
+
+            var obj = await _customerServices.FindByIdAsync(id.Value);
+     
+            CustomerFormViewModel viewModel = new CustomerFormViewModel { Customer = obj};
+           
+            return View(viewModel);
+        } 
 
         public IActionResult Get()
         {
             var customer = _customerServices.AllCustomers();
             return Json(customer);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Edit(int id, Customer customer)
+        {
+            await _customerServices.UpdateAsync(customer);
+            return RedirectToAction(nameof(Index));
+        }
+
+        [HttpDelete]
+        [ValidateAntiForgeryToken]
+        [Route("Customers/Delete/{id}")]
+        public async Task<IActionResult> Delete(int id)
+        {
+            await _customerServices.RemoveAsync(id);
+            return RedirectToAction(nameof(Index));
+     
         }
 
      
